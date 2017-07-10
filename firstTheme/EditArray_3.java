@@ -23,7 +23,7 @@ public class EditArray {
             }
         }
         return minValue;
-    }//change
+    }
 
     /**
      * Sum all elements of an array
