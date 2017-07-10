@@ -26,7 +26,7 @@ public class EditArray {
     }
 
     /**
-     * Sum all elements of an array
+     * Sum all elements of an array 
      * @param array -> the array which elements are summed
      * @return the sum of all elements in the array
      */
