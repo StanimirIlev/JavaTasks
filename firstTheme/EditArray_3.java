@@ -9,7 +9,11 @@ public class EditArray {
         System.out.println("The array:");
         printArray(array);//    print the array
     }
+<<<<<<< HEAD
     // comment 1
+=======
+    // comment 2
+>>>>>>> guest
     /**
      * Gets the minimal element of an array
      * @param array -> the array of which the smallest element is returned
