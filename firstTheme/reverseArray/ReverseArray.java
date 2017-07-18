@@ -2,6 +2,8 @@ package firstTheme.reverseArray;
 
 /**
  * This class reverse array of integers
+ * @author  Stanimir
+ * @since   18.7.2017
  */
 public class ReverseArray {
     private int[] array;
