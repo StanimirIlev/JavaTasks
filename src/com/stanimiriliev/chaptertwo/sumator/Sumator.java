@@ -32,38 +32,11 @@ public class Sumator {
      * Sum two numbers
      * @param a -> first number
      * @param b -> second number
+     * @throws NumberFormatException when one of the strings does not contain a valid integers
      * @return the sum of the two numbers
      */
-    public static int sum(String a, String b){
-        try{
-            return Integer.parseInt(a) + Integer.parseInt(b);// Trying to parse both strings to int and sum them
-        }
-        catch(NumberFormatException e){// If one of the strings does not contains only digits
-            System.out.println("Invalid numbers.\nPlease enter valid numbers.\nFirst number: ");// Print error msg
-            Scanner input = new Scanner(System.in);// Open Scanner stream
-            while(true){// Infinity loop so the code inside will run until the user enters a valid numbers
-                try{// Second try-catch block to process the exceptions
-                    int c = input.nextInt();// read first number from the console
-                    System.out.println("Second number: ");
-                    int d = input.nextInt();// read second number from the console
-                    input.close();// Close the Scanner stream
-                    return c + d;// return the result
-                }
-                catch(InputMismatchException ex){// If the user has entered invalid numbers
-                    System.out.println("Invalid numbers.\nPlease enter valid numbers.\nFirst number: ");// Error msg
-                    input = new Scanner(System.in);// Recreates instance of the class Scanner in order to reset the
-                    // input of the user
-                }
-                catch(NoSuchElementException ex){// If the input is exhausted
-                    System.out.println("Input is exhausted.\nPlease enter the numbers again.\nFirst number: ");// Error msg
-                    input = new Scanner(System.in);// Recreates instance of the class Scanner
-                }
-                catch(IllegalStateException ex){// If the scanner is closed
-                    System.out.println("The scanner is closed.\nPlease enter the numbers again.\nFirst number: ");// Error msg
-                    input.reset();// Restart the instance of the class Scanner
-                }
-            }
-        }
+    public static int sum(String a, String b) throws NumberFormatException{
+        return Integer.parseInt(a) + Integer.parseInt(b);
     }
     /**
      * Sum two numbers
