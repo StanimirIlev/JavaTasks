@@ -7,7 +7,7 @@ package com.stanimiriliev.chaptertwo.homogeneoustree;
  */
 public class Test {
     public static void main(String[] args){
-        Tree tree = new Tree();
+        Tree tree = new Tree(30);
         tree.add(30);
         tree.add(45);
         tree.add(12);
