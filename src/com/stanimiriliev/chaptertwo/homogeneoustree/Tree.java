@@ -1,94 +1,158 @@
 package com.stanimiriliev.chaptertwo.homogeneoustree;
 
 /**
- * Binary tree
- * Created by Stanimir Iliev on 18.6.2017 y..
+ * Binary Ordered Tree, Homogeneous Tree
+ * @author  Stanimir
+ * @since 18.6.2017
  */
 public class Tree {
-    private int value;// root and the value of the notes
-    private Tree left,// elements less than root
-            right;// elements greater than root
-    private boolean firstAdd = true;// When function add is called for the first time
-    // the value goes to the root of the tree
+
+    private Node root;
 
     /**
-     * Creates new instance of this class
+     * Constructor for the new instance of this class
      */
-    public Tree() {
-        this.left = this.right = null;//  left and right nodes are with value null
-        //  to know when we reach the end of the tree
-    }
-
-    /**
-     * Adds new element to the tree
-     * @param value -> The element which would be added in the tree
-     */
-    public void add(int value) {
-        if(contains(value))// If the value is already in the tree do not add it
-            return;
-        if(firstAdd){// If this is the first add, the value is the root of the tree
-            this.value = value;
-            this.firstAdd = false;// make firstAdd false because the tree could has only one root
-        }
-        else if(value < this.value) {// If the value is less than root go to left node
-            if (this.left == null) {// if the left node is null then it is the bottom
-                // of the tree and we create new instance of this class for the
-                // left node
-                this.left = new Tree();
-                this.left.value = value;// Set value in the left node
-            }
-            else
-                this.left.add(value);// recursively call this function to reach the
-            // bottom of the tree
-        }
-        else {// If the value is greater than root go to right node
-            if (this.right == null) {// if the right node is null then it is the bottom
-                // of the tree and we create new instance of this class for the
-                // right node
-                this.right = new Tree();
-                this.right.value = value;// Set value in the right node
-            }
-            else
-                this.right.add(value);// recursively call this function to reach the
-            // bottom of the tree
-        }
-    }
-
-    /**
-     * Prints the elements of the tree
-     * First the root of the tree, then left nodes and right nodes
-     */
-    public void printElements() {
-        System.out.println(this.value);// Prints the root element
-        if(this.left != null)// If bottom of the tree is not reached print left node
-            this.left.printElements();
-        if(this.right != null)// If bottom of the tree is not reached print right node
-            this.right.printElements();
+    public Tree(int root) {
+        this.root = new Node(root);
     }
 
     /**
      * Finds if the tree contains this element
+     * Calls the next contains method
      * @param element -> The element to search for
-     * @return true if the element is found and false if not
+     * @return true if the element is found and false if it is not
      */
     public boolean contains(int element) {
-        if(element == this.value)// If the root element is the searched element return true
+        return contains(this.root, element);
+    }
+    /**
+     * Finds if the tree contains this element
+     * @param element -> The element to search for
+     * @param root -> In which node to search for
+     * @return true if the element is found and false if it is not
+     */
+    public boolean contains(Node root, int element) {
+        if(element == root.getValue())
             return true;
-        else if(element < this.value) {// If the searched element is less than root search in left node
-            if(this.left != null) {// If the program is not reached the tree bottom recursively call this function with
-                // left sub node
-                return this.left.contains(element);
-            }
-            else// If the bottom is reached and the element is not found then it is not in the tree
+        else if(element < root.getValue()) {
+            if(root.getLeft() != null)
+                return contains(root.getLeft(), element);
+            else
                 return false;
         }
-        else {// If the searched element is greater than root search in right node
-            if(this.right != null) {// If the program is not reached the tree bottom recursively call this function with
-                // right sub node
-                return this.right.contains(element);
-            }
-            else// If the bottom is reached and the element is not found then it is not in the tree
+        else {
+            if(root.getRight() != null)
+                return contains(root.getRight(), element);
+            else
                 return false;
         }
+    }
+
+    /**
+     * Adds new element to the tree
+     * Calls next add method
+     * @param value -> The element which would be added in the tree
+     */
+    public void add(int value){
+        add(this.root, value);
+    }
+    /**
+     * Adds new element to the tree
+     * If the value is already in the tree, it will be not added
+     * If this is the first add, the value is the root of the tree
+     * @param value -> The element which would be added in the tree
+     * @param root -> In which node the element will be added
+     */
+    public void add(Node root, int value) {
+        if(contains(value))
+            return;
+        if(value < root.getValue()) {
+            if (root.getLeft() == null)
+                root.setLeft(new Node(value));
+            else
+                add(root.getLeft(), value);
+        }
+        else {
+            if (root.getRight() == null)
+                root.setRight(new Node(value));
+            else
+                add(root.getRight(), value);
+        }
+    }
+    /**
+     * Prints the elements of the tree
+     * Calls the next printElements method
+     */
+    public void printElements(){printElements(this.root);}
+    /**
+     * Prints the elements of the tree
+     * First the root of the tree, then left nodes and right nodes
+     */
+    public void printElements(Node root) {
+        System.out.println(root.value);
+        if(root.left != null)
+            printElements(root.getLeft());
+        if(root.right != null)
+            printElements(root.getRight());
+    }
+    /**
+     * Inner class for Tree
+     */
+    class Node {
+        private final int value;
+        public Node left;
+        private Node right;
+
+        /**
+         * Constructor for new instances of this class
+         * @param value -> root of the tree
+         */
+        public Node(int value){
+            this(value, null, null);
+        }
+
+        /**
+         * Constructor for new instances of this class
+         * @param value -> root of the tree
+         * @param left -> left node of the tree
+         * @param right -> right node of the tree
+         */
+        public Node(int value, Node left, Node right){
+            this.value = value;
+            this.left = left;
+            this.right = right;
+        }
+
+        /**
+         * Getter for the root of the tree
+         * @return the root
+         */
+        public int getValue(){return this.value;}
+
+        /**
+         * Getter for the left node of the tree
+         * @return the left node
+         */
+        public Node getLeft(){return this.left;}
+
+        /**
+         * Setter for the left node of the tree
+         * @param value -> the new left node
+         */
+        public void setLeft(Node value){this.left = value;}
+
+        /**
+         * Getter for the right node of the tree
+         * @return the right node
+         */
+        public Node getRight(){return this.right;}
+
+        /**
+         * Setter for the right node of the tree
+         * @param value -> the new right node
+         */
+        public void setRight(Node value){this.right = value;}
+
+
     }
 }
