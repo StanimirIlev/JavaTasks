@@ -18,97 +18,141 @@ public class Tree {
 
     /**
      * Finds if the tree contains this element
+     * Calls the next contains method
      * @param element -> The element to search for
      * @return true if the element is found and false if it is not
      */
     public boolean contains(int element) {
-        return this.root.contains(element);
+        return contains(this.root, element);
+    }
+    /**
+     * Finds if the tree contains this element
+     * @param element -> The element to search for
+     * @param root -> In which node to search for
+     * @return true if the element is found and false if it is not
+     */
+    public boolean contains(Node root, int element) {
+        if(element == root.getValue())
+            return true;
+        else if(element < root.getValue()) {
+            if(root.getLeft() != null)
+                return contains(root.getLeft(), element);
+            else
+                return false;
+        }
+        else {
+            if(root.getRight() != null)
+                return contains(root.getRight(), element);
+            else
+                return false;
+        }
+    }
+
+    /**
+     * Adds new element to the tree
+     * Calls next add method
+     * @param value -> The element which would be added in the tree
+     */
+    public void add(int value){
+        add(this.root, value);
     }
     /**
      * Adds new element to the tree
      * If the value is already in the tree, it will be not added
      * If this is the first add, the value is the root of the tree
      * @param value -> The element which would be added in the tree
+     * @param root -> In which node the element will be added
      */
-    public void add(int value) {
-        this.root.add(value);
+    public void add(Node root, int value) {
+        if(contains(value))
+            return;
+        if(value < root.getValue()) {
+            if (root.getLeft() == null)
+                root.setLeft(new Node(value));
+            else
+                add(root.getLeft(), value);
+        }
+        else {
+            if (root.getRight() == null)
+                root.setRight(new Node(value));
+            else
+                add(root.getRight(), value);
+        }
     }
+    /**
+     * Prints the elements of the tree
+     * Calls the next printElements method
+     */
+    public void printElements(){printElements(this.root);}
     /**
      * Prints the elements of the tree
      * First the root of the tree, then left nodes and right nodes
      */
-    public void printElements() {
-        this.root.printElements();
+    public void printElements(Node root) {
+        System.out.println(root.value);
+        if(root.left != null)
+            printElements(root.getLeft());
+        if(root.right != null)
+            printElements(root.getRight());
     }
     /**
      * Inner class for Tree
      */
     class Node {
-        public final int value;
+        private final int value;
         public Node left;
-        public Node right;
+        private Node right;
 
         /**
          * Constructor for new instances of this class
+         * @param value -> root of the tree
          */
         public Node(int value){
-            this.value = value;
-            this.left = this.right = null;
+            this(value, null, null);
         }
 
         /**
-         * Finds if the tree contains this element
-         * @param element -> The element to search for
-         * @return true if the element is found and false if it is not
+         * Constructor for new instances of this class
+         * @param value -> root of the tree
+         * @param left -> left node of the tree
+         * @param right -> right node of the tree
          */
-        public boolean contains(int element) {
-            if(element == this.value)
-                return true;
-            else if(element < this.value) {
-                if(this.left != null)
-                    return this.left.contains(element);
-                else
-                    return false;
-            }
-            else {
-                if(this.right != null)
-                    return this.right.contains(element);
-                else
-                    return false;
-            }
+        public Node(int value, Node left, Node right){
+            this.value = value;
+            this.left = left;
+            this.right = right;
         }
+
         /**
-         * Adds new element to the tree
-         * If the value is already in the tree, it will be not added
-         * If this is the first add, the value is the root of the tree
-         * @param value -> The element which would be added in the tree
+         * Getter for the root of the tree
+         * @return the root
          */
-        public void add(int value) {
-            if(contains(value))
-                return;
-            if(value < this.value) {
-                if (this.left == null)
-                    this.left = new Node(value);
-                else
-                    this.left.add(value);
-            }
-            else {
-                if (this.right == null)
-                    this.right = new Node(value);
-                else
-                    this.right.add(value);
-            }
-        }
+        public int getValue(){return this.value;}
+
         /**
-         * Prints the elements of the tree
-         * First the root of the tree, then left nodes and right nodes
+         * Getter for the left node of the tree
+         * @return the left node
          */
-        public void printElements() {
-            System.out.println(this.value);
-            if(this.left != null)
-                this.left.printElements();
-            if(this.right != null)
-                this.right.printElements();
-        }
+        public Node getLeft(){return this.left;}
+
+        /**
+         * Setter for the left node of the tree
+         * @param value -> the new left node
+         */
+        public void setLeft(Node value){this.left = value;}
+
+        /**
+         * Getter for the right node of the tree
+         * @return the right node
+         */
+        public Node getRight(){return this.right;}
+
+        /**
+         * Setter for the right node of the tree
+         * @param value -> the new right node
+         */
+        public void setRight(Node value){this.right = value;}
+
+
     }
 }
