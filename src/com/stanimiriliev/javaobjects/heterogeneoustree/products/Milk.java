@@ -1,4 +1,4 @@
-package com.stanimiriliev.chaptertwo.heterogeneoustree.products;
+package com.stanimiriliev.javaobjects.heterogeneoustree.products;
 
 /**
  * @author Stanimir Iliev

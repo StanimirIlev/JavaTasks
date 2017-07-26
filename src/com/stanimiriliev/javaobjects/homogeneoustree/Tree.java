@@ -1,4 +1,4 @@
-package com.stanimiriliev.chaptertwo.homogeneoustree;
+package com.stanimiriliev.javaobjects.homogeneoustree;
 
 /**
  * Binary Ordered Tree, Homogeneous Tree

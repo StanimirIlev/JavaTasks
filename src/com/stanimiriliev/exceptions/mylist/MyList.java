@@ -1,4 +1,4 @@
-package com.stanimiriliev.chapterthree.mylist;
+package com.stanimiriliev.exceptions.mylist;
 
 import java.util.ArrayList;
 import java.util.List;

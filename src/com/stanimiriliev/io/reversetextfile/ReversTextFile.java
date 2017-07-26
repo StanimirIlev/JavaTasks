@@ -1,4 +1,4 @@
-package com.stanimiriliev.chapterfour.reversetextfile;
+package com.stanimiriliev.io.reversetextfile;
 
 import java.io.File;
 import java.io.PrintStream;

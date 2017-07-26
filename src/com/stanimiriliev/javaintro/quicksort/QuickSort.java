@@ -1,4 +1,4 @@
-package com.stanimiriliev.chapterone.quicksort;
+package com.stanimiriliev.javaintro.quicksort;
 /**
  * This class sorts array of integers by method "Quick Sort"
  * @author  Stanimir

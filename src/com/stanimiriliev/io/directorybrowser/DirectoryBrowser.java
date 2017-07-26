@@ -1,4 +1,4 @@
-package com.stanimiriliev.chapterfour.directorybrowser;
+package com.stanimiriliev.io.directorybrowser;
 
 import java.io.File;
 

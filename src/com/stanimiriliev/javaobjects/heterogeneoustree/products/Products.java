@@ -1,10 +1,10 @@
-package com.stanimiriliev.chaptertwo.heterogeneoustree.products;
+package com.stanimiriliev.javaobjects.heterogeneoustree.products;
 
 /** Class for products
  * @author Stanimir Iliev
  * @since 21.07.2017
  */
-public class Products implements Comparable<Products>{
+public abstract class Products implements Comparable<Products>{
 
     public enum Packages{
         SMALL, MEDIUM, BIG

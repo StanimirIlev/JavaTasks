@@ -1,4 +1,4 @@
-package com.stanimiriliev.chapterone.quicksort;
+package com.stanimiriliev.javaintro.quicksort;
 
 /**
  * Created by Stanimir Iliev on 18.7.2017 г..

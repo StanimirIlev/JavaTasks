@@ -1,4 +1,4 @@
-package com.stanimiriliev.chapterfour.transferobject;
+package com.stanimiriliev.io.transferobject;
 
 import java.io.IOException;
 import java.io.InputStream;

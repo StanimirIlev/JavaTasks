@@ -1,4 +1,4 @@
-package com.stanimiriliev.chapterone.leastcommonmultiple;
+package com.stanimiriliev.javaintro.leastcommonmultiple;
 /**
  * This class finds the least common multiple of two integers
  * @author  Stanimir

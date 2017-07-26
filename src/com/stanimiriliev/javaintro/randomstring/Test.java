@@ -1,4 +1,4 @@
-package com.stanimiriliev.chapterone.randomstring;
+package com.stanimiriliev.javaintro.randomstring;
 
 import java.util.Scanner;
 

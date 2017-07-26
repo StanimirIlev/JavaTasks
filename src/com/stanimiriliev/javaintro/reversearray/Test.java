@@ -1,4 +1,4 @@
-package com.stanimiriliev.chapterone.reversearray;
+package com.stanimiriliev.javaintro.reversearray;
 
 /**
  * Created by Stanimir Iliev on 18.7.2017 г..

@@ -1,4 +1,4 @@
-package com.stanimiriliev.chapterone.modifyarray;
+package com.stanimiriliev.javaintro.modifyarray;
 
 /**
  * Class for modifying array of integers

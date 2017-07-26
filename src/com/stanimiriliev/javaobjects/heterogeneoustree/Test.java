@@ -1,8 +1,8 @@
-package com.stanimiriliev.chaptertwo.heterogeneoustree;
+package com.stanimiriliev.javaobjects.heterogeneoustree;
 
-import com.stanimiriliev.chaptertwo.heterogeneoustree.products.*;
-import com.stanimiriliev.chaptertwo.heterogeneoustree.products.Products.Packages;
-import com.stanimiriliev.chaptertwo.heterogeneoustree.products.Coffee.Types;
+import com.stanimiriliev.javaobjects.heterogeneoustree.products.*;
+import com.stanimiriliev.javaobjects.heterogeneoustree.products.Products.Packages;
+import com.stanimiriliev.javaobjects.heterogeneoustree.products.Coffee.Types;
 
 /**
  * Class to test the functionality of the heterogeneous tree

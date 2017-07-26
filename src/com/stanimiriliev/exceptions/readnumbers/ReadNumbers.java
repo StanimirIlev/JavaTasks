@@ -1,4 +1,4 @@
-package com.stanimiriliev.chapterthree.readnumbers;
+package com.stanimiriliev.exceptions.readnumbers;
 
 import java.util.Scanner;
 

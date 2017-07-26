@@ -1,4 +1,4 @@
-package com.stanimiriliev.chapterone.leastcommonmultiple;
+package com.stanimiriliev.javaintro.leastcommonmultiple;
 
 import java.util.Scanner;
 

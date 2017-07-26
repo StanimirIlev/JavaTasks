@@ -1,4 +1,4 @@
-package com.stanimiriliev.chapterone.reversearray;
+package com.stanimiriliev.javaintro.reversearray;
 
 /**
  * This class reverse array of integers

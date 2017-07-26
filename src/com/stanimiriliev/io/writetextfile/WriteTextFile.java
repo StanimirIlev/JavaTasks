@@ -1,4 +1,4 @@
-package com.stanimiriliev.chapterfour.writetextfile;
+package com.stanimiriliev.io.writetextfile;
 
 import java.util.Scanner;
 import java.io.PrintStream;

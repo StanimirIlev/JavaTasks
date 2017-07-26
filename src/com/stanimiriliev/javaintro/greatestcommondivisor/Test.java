@@ -1,4 +1,4 @@
-package com.stanimiriliev.chapterone.greatestcommondivisor;
+package com.stanimiriliev.javaintro.greatestcommondivisor;
 
 import java.util.Scanner;
 

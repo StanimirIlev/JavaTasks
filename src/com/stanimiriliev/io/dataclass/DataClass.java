@@ -1,4 +1,4 @@
-package com.stanimiriliev.chapterfour.dataclass;
+package com.stanimiriliev.io.dataclass;
 
 import java.io.IOException;
 import java.io.InputStream;

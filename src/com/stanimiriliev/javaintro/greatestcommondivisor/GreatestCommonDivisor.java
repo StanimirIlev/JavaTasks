@@ -1,4 +1,4 @@
-package com.stanimiriliev.chapterone.greatestcommondivisor;
+package com.stanimiriliev.javaintro.greatestcommondivisor;
 /**
  * The GreatestCommonDivisor class is used to find
  * the greatest common divisor of two numbers

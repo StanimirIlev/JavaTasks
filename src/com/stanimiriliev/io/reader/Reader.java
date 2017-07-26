@@ -1,4 +1,4 @@
-package com.stanimiriliev.chapterfour.reader;
+package com.stanimiriliev.io.reader;
 
 import java.util.Scanner;
 
