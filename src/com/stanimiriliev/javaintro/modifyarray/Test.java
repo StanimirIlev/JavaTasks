@@ -1,4 +1,4 @@
-package com.stanimiriliev.chapterone.modifyarray;
+package com.stanimiriliev.javaintro.modifyarray;
 
 /**
  * Created by Stanimir Iliev on 18.7.2017 г..
