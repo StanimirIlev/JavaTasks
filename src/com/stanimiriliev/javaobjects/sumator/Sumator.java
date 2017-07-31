@@ -1,4 +1,4 @@
-package com.stanimiriliev.chaptertwo.sumator;
+package com.stanimiriliev.javaobjects.sumator;
 /**
  * Created by Stanimir Iliev on 16.6.2017 y..
  */
