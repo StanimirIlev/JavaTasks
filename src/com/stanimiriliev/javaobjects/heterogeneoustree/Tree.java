@@ -1,4 +1,4 @@
-package com.stanimiriliev.chaptertwo.heterogeneoustree;
+package com.stanimiriliev.javaobjects.heterogeneoustree;
 
 /**
  * Heterogeneous tree

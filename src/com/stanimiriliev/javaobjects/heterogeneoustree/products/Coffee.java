@@ -1,4 +1,4 @@
-package com.stanimiriliev.chaptertwo.heterogeneoustree.products;
+package com.stanimiriliev.javaobjects.heterogeneoustree.products;
 
 /**
  * @author Stanimir Iliev
@@ -11,12 +11,10 @@ public class Coffee extends Products {
             GROUND, BEANS
     }
 
-    public final Packages pack;
     public final Types type;
 
-    public Coffee(Packages pack, Types type, String make, Integer code){
-        super(make, code);
-        this.pack = pack;
+    public Coffee(Packages pack, Types type, String make, double price){
+        super(pack, make, price);
         this.type = type;
     }
 }

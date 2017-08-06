@@ -1,4 +1,4 @@
-package com.stanimiriliev.chapterone.modifyarray;
+package com.stanimiriliev.javaintro.modifyarray;
 
 /**
  * Class for modifying array of integers
@@ -13,6 +13,8 @@ public class ModifyArray {
      * @param array -> The array to modify
      */
     public ModifyArray(int[] array){
+        if(array.length == 0)
+            throw new IllegalArgumentException("This array is empty");
         this.array = array;
     }
     /**

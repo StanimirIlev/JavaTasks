@@ -1,4 +1,4 @@
-package com.stanimiriliev.chaptertwo.heterogeneoustree.products;
+package com.stanimiriliev.javaobjects.heterogeneoustree.products;
 
 /** Class for products
  * @author Stanimir Iliev
@@ -11,14 +11,16 @@ public class Products implements Comparable<Products>{
     }
 
     public final String make;
-    public final Integer code;
+    public final Double price;
+    public final Packages pack;
 
-    public Products(String make, int code){
+    public Products(Packages pack, String make, double price){
         this.make = make;
-        this.code = code;
+        this.price = price;
+        this.pack = pack;
     }
 
     public int compareTo(Products product){
-        return this.code.compareTo(product.code);
+        return this.price.compareTo(product.price);
     }
 }

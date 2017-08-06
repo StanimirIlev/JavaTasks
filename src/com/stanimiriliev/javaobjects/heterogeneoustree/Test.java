@@ -1,8 +1,8 @@
-package com.stanimiriliev.chaptertwo.heterogeneoustree;
+package com.stanimiriliev.javaobjects.heterogeneoustree;
 
-import com.stanimiriliev.chaptertwo.heterogeneoustree.products.*;
-import com.stanimiriliev.chaptertwo.heterogeneoustree.products.Products.Packages;
-import com.stanimiriliev.chaptertwo.heterogeneoustree.products.Coffee.Types;
+import com.stanimiriliev.javaobjects.heterogeneoustree.products.*;
+import com.stanimiriliev.javaobjects.heterogeneoustree.products.Products.Packages;
+import com.stanimiriliev.javaobjects.heterogeneoustree.products.Coffee.Types;
 
 /**
  * Class to test the functionality of the heterogeneous tree
@@ -29,9 +29,9 @@ public class Test {
         shop.add(gabrovo);
         shop.add(bozhentsi);
 
-        Products search = new Products("", 15);
+        Products search = new Products(Packages.MEDIUM, "", 15);
         if(shop.getElement(search) == null){
-            System.out.println("There is no product with this code");
+            System.out.println("There is no product with this price");
         }
         else{
             System.out.println(shop.getElement(search).make);
